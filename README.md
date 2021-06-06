@@ -1,15 +1,16 @@
 # Migrate2MDAV
-_Migrating from 3rd party AV to Microsoft Defender for AV using SCCM/MECM_
+__Migrating from 3rd party AV to Microsoft Defender for AV using SCCM/MECM__
+
 Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Microsoft Defender for Endpoint (MDE) can be a complex process depending on the AV vendor, organizational policies, infrastructure, etc. However, the following is a process I have developed through trial and error. The AV-Migration-MDE-TS zipped file is a Task Sequence template for SCCM/MECM. It is assumed the user of this file understands how to build a Task Sequence, Packages, etc. You must edit and configure the Tasks to meet your organization's requirements. This is the order of actions I have found to work best, you may find a variation that works for you.
 
 **Migration Steps:**
-1. _On a single Test device export your current AV Firewall policies:_ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
+1. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
   A. Export SEP firewall policies to CSV
   B. Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
   C. On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
   D. Task Sequence command- import testpolicy.wfw
 
-2. _Configure GPO's (if devices are not allowed to connect to Internet directly)_
+2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
     A. Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
     B. Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
 	    Set to Enabled
@@ -25,7 +26,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
 4. Configure Antimalware Policies in SCCM
 
-5. Configure and run Task Sequence:
+5. __Configure and run Task Sequence:__
     A. Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
     B. Enable Windows Firewall: netsh advfirewall set allprofiles state on
     C. Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)

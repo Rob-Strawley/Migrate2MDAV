@@ -11,16 +11,17 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
  	 **B.)** Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
 
 	 **C.)** On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
+	 
   	 **D.)** Task Sequence command- import testpolicy.wfw
 
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 
-    A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
+    	A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
 
-    B.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
+   	 B.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
 	    Set to Enabled
 	    Enter Proxy Server name
-    C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
+    	C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
 	Use the following registry key entry to add a tag on a device:
 	Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
 	Registry key value (REG_SZ): Group
@@ -32,10 +33,15 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 4. Configure Antimalware Policies in SCCM
 
 5. __Configure and run Task Sequence:__
-    A. Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
-    B. Enable Windows Firewall: netsh advfirewall set allprofiles state on
-    C. Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)
-    D. update MDAV definitions
-    E. Reboot (this will remove remnants of 3rd party AV and put MDAV in Active mode upon reboot)
-    F. Run MDE Detection Test:
-	powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'
+   	 A. Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
+	 
+   	 B. Enable Windows Firewall: netsh advfirewall set allprofiles state on
+	 
+    	 C. Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)
+	 
+   	 D. update MDAV definitions
+	 
+   	 E. Reboot (this will remove remnants of 3rd party AV and put MDAV in Active mode upon reboot)
+	 
+   	 F. Run MDE Detection Test:
+		powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'

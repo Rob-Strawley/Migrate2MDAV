@@ -35,15 +35,15 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
 5. __Configure and run Task Sequence:__
 
-	A. Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
+	A.) Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
 	
-	B. Enable Windows Firewall: netsh advfirewall set allprofiles state on
+	B.) Enable Windows Firewall: netsh advfirewall set allprofiles state on
 	
-	C. Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)
+	C.) Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)
 	
-	D. update MDAV definitions
+	D.) update MDAV definitions
 	
-	E. Reboot (this will remove remnants of 3rd party AV and put MDAV in Active mode upon reboot)
+	E.) Reboot (this will remove remnants of 3rd party AV and put MDAV in Active mode upon reboot)
 	
-	F. Run MDE Detection Test:
+	F.) Run MDE Detection Test:
 		powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'

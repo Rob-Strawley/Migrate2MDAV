@@ -11,8 +11,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
  	 **B.)** Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
 
 	 **C.)** On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
-
-  	 **D.)**Task Sequence command- import testpolicy.wfw
+  	 **D.)** Task Sequence command- import testpolicy.wfw
 
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 

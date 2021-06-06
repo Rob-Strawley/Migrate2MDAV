@@ -12,11 +12,12 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 
-    A. Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
-    B. Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
+    A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
+
+    B.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
 	    Set to Enabled
 	    Enter Proxy Server name
-    C. Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
+    C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
 	Use the following registry key entry to add a tag on a device:
 	Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
 	Registry key value (REG_SZ): Group

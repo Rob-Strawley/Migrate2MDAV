@@ -6,29 +6,29 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 **Migration Steps:**
 1. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
 
- 	 **A.)** Export SEP firewall policies to CSV
+ 	 	A.) Export SEP firewall policies to CSV
 
- 	 **B.)** Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
+ 	 	B.) Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
 
-	 **C.)** On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
+	 	C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
 	 
-  	 **D.)** Task Sequence command- import testpolicy.wfw
+  	 	D.) Task Sequence command- import testpolicy.wfw
 
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 
     A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
-    
+
     B.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure connected user experiences and telemetry.
 	    i.Set to Enabled
 	    ii.Enter Proxy Server name
-	    
+
     C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
 	Use the following registry key entry to add a tag on a device:
 	Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
 	Registry key value (REG_SZ): Group
 	Registry key data: Name of the tag you want to set
 
-3. Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)
+3. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__
     A. For downlevel Operating Systems configure and use the "MMA Onboard to MDE" Task in the Task Sequence
 
 4. Configure Antimalware Policies in SCCM

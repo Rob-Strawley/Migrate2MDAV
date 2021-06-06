@@ -46,3 +46,17 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	
 	F.) Run MDE Detection Test:
 		powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'
+		
+		
+__**Uninstalling Vendor AV:__**
+
+**Symantec**: https://knowledge.broadcom.com/external/article/151297/uninstall-the-endpoint-protection-client.html
+
+**McAfee**: https://kc.mcafee.com/corporate/index?page=content&id=KB90895
+
+**CrowdStrike Falcon**: https://help.redcanary.com/hc/en-us/articles/360052302854-Installing-and-uninstalling-the-Crowdstrike-Falcon-sensor-on-Windows
+
+**TrendMicro**: https://success.trendmicro.com/global-search?keyword=Uninstall+Trend+Micro
+
+
+

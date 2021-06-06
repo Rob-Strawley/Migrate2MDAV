@@ -12,8 +12,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	 
 	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
 	 
-	 D.) Task Sequence command- import testpolicy.wfw
-
+	
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 
     A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage

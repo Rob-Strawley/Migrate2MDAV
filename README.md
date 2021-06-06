@@ -34,7 +34,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
 5. __Configure and run Task Sequence:__
 
-	A.) Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
+	A.) Uninstall 3rd party AV (See notes below)
 	
 	B.) Enable Windows Firewall: netsh advfirewall set allprofiles state on
 	
@@ -47,8 +47,10 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	F.) Run MDE Detection Test:
 		powershell.exe -NoExit -ExecutionPolicy Bypass -WindowStyle Hidden $ErrorActionPreference= 'silentlycontinue';(New-Object System.Net.WebClient).DownloadFile('http://127.0.0.1/1.exe', 'C:\\test-WDATP-test\\invoice.exe');Start-Process 'C:\\test-WDATP-test\\invoice.exe'
 		
-		
-__**Uninstalling Vendor AV:__**
+
+
+
+__**Notes- Uninstalling Vendor AV:__**
 
 **Symantec**: https://knowledge.broadcom.com/external/article/151297/uninstall-the-endpoint-protection-client.html
 

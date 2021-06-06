@@ -6,13 +6,13 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 **Migration Steps:**
 1. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
 
- 	 	A.) Export SEP firewall policies to CSV
-
- 	 	B.) Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
-
-	 	C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
+ 	 A.) Export SEP firewall policies to CSV
 	 
-  	 	D.) Task Sequence command- import testpolicy.wfw
+	 B.) Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
+	 
+	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
+	 
+	 D.) Task Sequence command- import testpolicy.wfw
 
 2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
 
@@ -34,6 +34,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 4. Configure Antimalware Policies in SCCM
 
 5. __Configure and run Task Sequence:__
+
    	 A. Uninstall 3rd party AV (provided zipped file contains removal of Symantec Endpoint Protection command)
 
 	 B. Enable Windows Firewall: netsh advfirewall set allprofiles state on

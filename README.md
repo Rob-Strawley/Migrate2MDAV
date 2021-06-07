@@ -22,13 +22,14 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 		Enter Proxy Server name
 
     C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
+    
 	Use the following registry key entry to add a tag on a device:
 	
-	Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
+		Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
 	
-	Registry key value (REG_SZ): Group
+		Registry key value (REG_SZ): Group
 	
-	Registry key data: Name of the tag you want to set
+		Registry key data: Name of the tag you want to set
 
 3. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
     For downlevel Operating Systems configure and use the "MMA Onboard to MDE" Task in the Task Sequence

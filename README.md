@@ -41,7 +41,7 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 		Set to Enabled
 		Enter Proxy Server name
 
-    C.) Tag devices: (per "MDE Roles and Groups" spreadsheet)
+4. __Tag devices: (per "MDE Roles and Groups" spreadsheet)__
     
 	Use the following registry key entry to add a tag on a device:
 	
@@ -51,11 +51,11 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 	
 		Registry key data: Name of the tag you want to set
 
-4. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
+5. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
    
-5. __Configure Antimalware Policies in SCCM__
+6. __Configure Antimalware Policies in SCCM__
 
-6. __Configure and run Task Sequence:__
+7. __Configure and run Task Sequence:__
 
 	A.) Uninstall 3rd party AV (See notes below)
 	

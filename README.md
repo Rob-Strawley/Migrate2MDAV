@@ -5,7 +5,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
 **Migration Steps:**
 
-1. __Plan MDE RBAC and Device Groups__
+1. __Plan MDE RBAC and Device Groups__ (https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/user-roles?view=o365-worldwide)
 
 	A.) Download "MDE Roles and Groups" spreadsheet. Planning this first will save you time later.
 

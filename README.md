@@ -23,7 +23,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 
     C.) Tag devices: (doesn't necessarily need to be done here but it makes it easier later)
 	Use the following registry key entry to add a tag on a device:
-
+	
 	Registry key: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection\DeviceTagging\
 	Registry key value (REG_SZ): Group
 	Registry key data: Name of the tag you want to set

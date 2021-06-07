@@ -1,5 +1,5 @@
 
-__Microsoft Disclaimer for custom scripts__
+__Microsoft Disclaimer for custom scripts and files__
 
 The sample files are not supported under any Microsoft standard support program or service. The sample files
  are provided AS IS without warranty of any kind. Microsoft further disclaims all implied warranties including, 

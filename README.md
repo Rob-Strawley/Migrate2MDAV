@@ -6,9 +6,10 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 **Migration Steps:**
 
 1.__Plan MDE RBAC and Device Groups__
+
 	A.) Download "MDE Roles and Groups" spreadsheet. Planning this first will save you time later.
 
-2. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
+2.__On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
 
  	 A.) Export SEP firewall policies to CSV
 	 
@@ -17,7 +18,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
 	 
 	
-3. __Configure GPO's (if devices are not allowed to connect to Internet directly)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/production-deployment?view=o365-worldwide)
+3.__Configure GPO's (if devices are not allowed to connect to Internet directly)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/production-deployment?view=o365-worldwide)
 
     A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
 
@@ -35,11 +36,11 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	
 		Registry key data: Name of the tag you want to set
 
-4. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
+4.__Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
    
 5. Configure Antimalware Policies in SCCM
 
-6. __Configure and run Task Sequence:__
+6.__Configure and run Task Sequence:__
 
 	A.) Uninstall 3rd party AV (See notes below)
 	

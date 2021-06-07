@@ -26,7 +26,8 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 
 	A.) Download "MDE Roles and Groups" spreadsheet. Planning this first will save you time later.
 
-2. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)- *Note, this script may not work in all cases due to the various ways organizations create Firewall policies. The script parses an xml file and looks for certain parameters that some organizations omit or modify.*
+2. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
+	 *Note, this script may not work in all cases due to the various ways organizations create Firewall policies. The script parses an xml file and looks for certain parameters that some organizations omit or modify.*
 
  	 A.) Export SEP firewall policies to CSV
 	 

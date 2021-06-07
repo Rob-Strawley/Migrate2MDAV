@@ -13,7 +13,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
 	 
 	
-2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__
+2. __Configure GPO's (if devices are not allowed to connect to Internet directly)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/production-deployment?view=o365-worldwide)
 
     A.) Administrative Templates > Windows Components > Data Collection and Preview Builds > Configure Authenticated Proxy usage for the Connected User Experience and Telemetry Service; Set it to Enabled and select Disable Authenticated Proxy usage
 
@@ -27,7 +27,7 @@ Migrating from 3rd Party AV to Microsoft Defender (MDAV) and Onboarding to Micro
 	Registry key value (REG_SZ): Group
 	Registry key data: Name of the tag you want to set
 
-3. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__
+3. __Onboard devices via SCCM MDATP Policy (Windows 10 and Server 2019 only using the .onboarding file from the MDE Portal)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/onboarding-endpoint-configuration-manager?view=o365-worldwide)
     A. For downlevel Operating Systems configure and use the "MMA Onboard to MDE" Task in the Task Sequence
 
 4. Configure Antimalware Policies in SCCM

@@ -15,7 +15,7 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 	 
 	 B.) Import csv file into running Windows Firewall using PowerShell Script (https://winaero.com/export-and-import-specific-firewall-rule-in-windows-10/)
 	 
-	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO (testpolicy.wfw)
+	 C.) On same device Export policies to Folder- this is saved as a .wfw which can then be imported via SCCM/GPO in Step 6 below (testpolicy.wfw)
 	 
 	
 3. __Configure GPO's (if devices are not allowed to connect to Internet directly)__(https://docs.microsoft.com/en-us/microsoft-365/security/defender-endpoint/production-deployment?view=o365-worldwide)

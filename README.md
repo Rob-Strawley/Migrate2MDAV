@@ -10,6 +10,8 @@ liable for any damages whatsoever (including, without limitation, damages for lo
 interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to 
 use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages.
 
+*Special thanks to Justin Lynch, Chris Edwards, and Bill Almonroeder for their assistance with MECM.*
+
 
 
 
@@ -63,7 +65,7 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 	
 	C.) Import Firewall Policies: Netsh advfirewall import c:\temp\testpolicy.wfw (if applicable)
 	
-	D.) update MDAV definitions
+	D.) update MDAV definitions (https://yongrhee.wordpress.com/2020/02/22/sccm-endpoint-protection-enabling-platform-update-for-microsoft-scep-via-sccm-adr-part-5/)
 	
 	E.) Reboot (this will remove remnants of 3rd party AV and put MDAV in Active mode upon reboot)
 	

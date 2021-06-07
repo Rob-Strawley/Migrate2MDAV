@@ -1,3 +1,18 @@
+
+Microsoft Disclaimer for custom scripts
+# ================================================================================================================
+# The sample files are not supported under any Microsoft standard support program or service. The sample files
+# are provided AS IS without warranty of any kind. Microsoft further disclaims all implied warranties including, 
+# without limitation, any implied warranties of merchantability or of fitness for a particular purpose. The entire
+# risk arising out of the use or performance of the sample files and documentation remains with you. In no event
+# shall Microsoft, its authors, or anyone else involved in the creation, production, or delivery of the files be
+# liable for any damages whatsoever (including, without limitation, damages for loss of business profits, business
+# interruption, loss of business information, or other pecuniary loss) arising out of the use of or inability to 
+# use the sample scripts or documentation, even if Microsoft has been advised of the possibility of such damages.
+# ================================================================================================================
+
+
+
 # Migrate2MDAV/MDE (Windows 10 and Server 2019)
 __Migrating from 3rd party AV to Microsoft Defender AV using SCCM/MECM__
 
@@ -9,7 +24,7 @@ Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboardi
 
 	A.) Download "MDE Roles and Groups" spreadsheet. Planning this first will save you time later.
 
-2. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)
+2. __On a single Test device export your current AV Firewall policies:__ (https://github.com/JesseEsquivel/MDATP/tree/master/Scripts/Migrations)- *Note, this script may not work in all cases due to the various ways organizations create Firewall policies. The script parses an xml file and looks for certain parameters that some organizations omit or modify.*
 
  	 A.) Export SEP firewall policies to CSV
 	 

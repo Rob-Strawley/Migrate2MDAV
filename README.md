@@ -18,7 +18,7 @@ use the sample scripts or documentation, even if Microsoft has been advised of t
 # Migrate2MDAV/MDE (Windows 10 and Server 2019)
 __Migrating from 3rd party AV to Microsoft Defender AV using SCCM/MECM__
 
-Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboarding to Microsoft Defender for Endpoint (MDE) can be a complex process depending on the AV vendor, organizational policies, infrastructure, etc. However, the following is a process I have developed through trial and error. The AV-Migration-MDE-TS zipped file is a Task Sequence template for SCCM/MECM. It is assumed the user of this file understands how to build/run a Task Sequence, Packages, etc. You must edit and configure the Tasks to meet your organization's requirements. This is the order of actions I have found to work best, you may find a different variation that works for you.
+Migrating from 3rd Party AV to Microsoft Defender Anti-Virus (MDAV) and Onboarding to Microsoft Defender for Endpoint (MDE) can be a complex process depending on the AV vendor, organizational policies, infrastructure, etc. However, the following is a process I have developed through trial and error. The AV-Migration-MDE-TS zipped file is a Task Sequence template for SCCM/MECM that can be imported as a Task Sequence. It is assumed the user of this file understands how to build/run a Task Sequence, Packages, etc. You must edit and configure the Tasks to meet your organization's requirements. This is the order of actions I have found to work best, you may find a different variation that works for you.
 
 **Migration Steps:**
 
